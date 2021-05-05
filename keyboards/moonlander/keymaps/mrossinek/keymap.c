@@ -48,30 +48,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,--------------------------------------------------------------.                                          ,--------------------------------------------------------------.
- * |   =    |    1   |    2   |    3   |    4   |    5   |  Left  |                                          |  Right |    6   |    7   |    8   |    9   |    0   |   -    |
+ * |   L3   |    1   |    2   |    3   |    4   |    5   |  Hyper |                                          |  Meh   |    6   |    7   |    8   |    9   |    0   |PrScreen|
  * |--------+--------+--------+--------+--------+--------+--------|                                          |--------+--------+--------+--------+--------+--------+--------|
- * |   Del  |    Q   |    W   |    E   |    R   |    T   |   L1   |                                          |   L2   |    Y   |    U   |    I   |    O   |    P   |   \    |
+ * |    `   |    Q   |    W   |    E   |    R   |    T   |  Del   |                                          | Insert |    Y   |    U   |    I   |    O   |    P   |   '    |
  * |--------+--------+--------+--------+--------+--------+--------|                                          |--------+--------+--------+--------+--------+--------+--------|
- * |   Esc  |    A   |    S   |    D   |    F   |    G   |  Hyper |  <-  Do I really want to use these?  ->  |   Meh  |    H   |    J   |    K   |    L   |    ;   |   '    |
+ * |   Tab  |    A   |    S   |    D   |    F   |    G   | PgDown |                                          |  PgUp  |    H   |    J   |    K   |    L   |    ;   |   \    |
  * |--------+--------+--------+--------+--------+--------+--------'                                          `--------+--------+--------+--------+--------+--------+--------|
  * | LShift |    Z   |    X   |    C   |    V   |    B   |                                                            |    N   |    M   |    ,   |    .   |    /   | RShift |
  * |--------+--------+--------+--------+--------+--------'                                                            '--------+--------+--------+--------+--------+--------|
- * |   `    |  Ctrl  |   Alt  |  Left  |  Right |         ,-----------------.                      ,-----------------.         |   Up   |  Down  |    [   |    ]   |  ~L3   |
- * `--------------------------------------------'         |       App (?)   |                      |       Esc       |         `--------------------------------------------'
- *            ^^^^^^^^^^^^^^^                             |--------+-----------------.    ,--------+-----------------|
- *         Maybe place - and = here instead               |        |        |        |    |        |        |        |
- *         Actually, place brackets here and move         | Space  | Back-  |  LGUI  |    |  RGUI  |  Tab   | Enter  |
- *         - and = over to the right (same in SYMB)       |        | space  |        |    |        |        |        |
+ * | LCtrl  |    [   |    ]   |  Left  |  Right |         ,-----------------.                      ,-----------------.         |   Up   |  Down  |    -   |    =   | RCtrl  |
+ * `--------------------------------------------'         |       L2        |                     |       L4        |         `--------------------------------------------'
+ *                                                        |--------+-----------------.    ,--------+-----------------|
+ *                                                        |        |        |        |    |        |        |        |
+ *                                                        | Space  | Back-  |  LGUI  |    |  RAlt  |  Esc   | Enter  |
+ *                                                        |        | space  |        |    |        |        |        |
  *                                                        `--------------------------'    `--------------------------'
  *
  */
 [BASE] = LAYOUT_moonlander(
-     KC_EQL , KC_1    , KC_2   , KC_3   , KC_4  ,  KC_5   , KC_LEFT,                                         KC_RGHT   , KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_MINS ,
-     KC_DEL , KC_Q    , KC_W   , KC_E   , KC_R  ,  KC_T   , TG(SYMB),                                        TG(MDIA)  , KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_BSLS ,
-     KC_ESC , KC_A    , KC_S   , KC_D   , KC_F  ,  KC_G   , KC_HYPR ,                                        KC_MEH    , KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_QUOT ,
-     KC_LSFT, KC_Z    , KC_X   , KC_C   , KC_V  ,  KC_B   ,                                                              KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_RSFT ,
-     KC_GRV , KC_LCTRL, KC_LALT, KC_LEFT, KC_RGHT,          KC_APP           ,                         KC_ESC         ,           KC_UP  , KC_DOWN, KC_LBRC, KC_RBRC, MO(UNIC),
-                                                            KC_SPC  , KC_BSPC, KC_LGUI,     KC_RGUI ,  KC_TAB,  KC_ENT
+     TG(MDIA), KC_1   , KC_2   , KC_3   , KC_4  ,  KC_5   , KC_HYPR,                                         KC_MEH , KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_PSCR ,
+     KC_GRV  , KC_Q   , KC_W   , KC_E   , KC_R  ,  KC_T   , KC_DEL ,                                         KC_INS , KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , KC_QUOT ,
+     KC_TAB  , KC_A   , KC_S   , KC_D   , KC_F  ,  KC_G   , KC_PGDN,                                         KC_PGUP, KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_BSLS ,
+     KC_LSFT , KC_Z   , KC_X   , KC_C   , KC_V  ,  KC_B   ,                                                           KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_RSFT ,
+     KC_LCTRL, KC_LBRC, KC_RBRC, KC_LEFT, KC_RGHT,          OSL(SYMB)       ,                       OSL(UNIC)     ,            KC_UP  , KC_DOWN, KC_MINS, KC_EQL , KC_RCTRL,
+                                                            KC_SPC , KC_BSPC, KC_LGUI,     KC_RALT, KC_ESC, KC_ENT
 ),
 
 /* Keymap 1: Symbol layer
