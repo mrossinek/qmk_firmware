@@ -110,7 +110,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `--------------------------------------------'         |       L2        |                     |       L4        |         `--------------------------------------------'
  *                                                        |--------+-----------------.    ,--------+-----------------|
  *                                                        |        |        |        |    |        |        |        |
- *                                                        | Space  | Back-  |  LGUI  |    |  RAlt  |  Esc   | Enter  |
+ *                                                        | Space  | Back-  |  LGUI  |    |  LAlt  |  Esc   | Enter  |
  *                                                        |        | space  |        |    |        |        |        |
  *                                                        `--------------------------'    `--------------------------'
  *
@@ -121,7 +121,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_TAB  , KC_A   , KC_S   , KC_D   , KC_F  ,  KC_G   , KC_PGDN,                                         KC_PGUP, KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, KC_BSLS ,
      KC_LSFT , KC_Z   , KC_X   , KC_C   , KC_V  ,  KC_B   ,                                                           KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_RSFT ,
      KC_LCTRL, KC_LBRC, KC_RBRC, KC_LEFT, KC_RGHT,          OSL(SYMB)       ,                       OSL(UNIC)     ,            KC_UP  , KC_DOWN, KC_MINS, KC_EQL , KC_RCTRL,
-                                                            KC_SPC , KC_BSPC, KC_LGUI,     KC_RALT, KC_ESC, KC_ENT
+                                                            KC_SPC , KC_BSPC, KC_LGUI,     KC_LALT, KC_ESC, KC_ENT
 ),
 
 /* Keymap 1: Symbol layer
