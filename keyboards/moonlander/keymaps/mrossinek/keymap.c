@@ -38,6 +38,7 @@ enum unicode_names {
     ANGEL,
     CONFUSED,
     FLUSHED,
+    FPALM,
     GRIM,
     HEART,
     JOY,
@@ -67,6 +68,7 @@ const uint32_t PROGMEM unicode_map[] = {
     [ANGEL]    = 0x1F607, // 😇
     [CONFUSED] = 0x1F615, // 😕
     [FLUSHED]  = 0x1F633, // 😳
+    [FPALM]    = 0x1F926, // 🤦
     [GRIM]     = 0x1F62C, // 😬
     [HEART]    = 0x1F970, // 🥰
     [JOY]      = 0x1F602, // 😂
@@ -204,9 +206,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [UNIC] = LAYOUT_moonlander(
      _______, _______ , _______ , _______    , _______   , _______, _______,                                             _______, _______ , _______    , _______  , _______    , _______    , _______,
-     _______, X(POOP) , X(WINK) , X(NO_EVIL) , X(PARTY)  , X(TADA), _______,                                             _______, X(YUMMY), X(UNAMUSED), X(SMILE) , X(SMILE)   , X(TONGUE)  , _______,
+     _______, X(POOP) , X(WINK) , X(NO_EVIL) , X(PARTY)  , X(TADA), _______,                                             _______, X(YUMMY), X(UNAMUSED), X(SMILE) , X(SCREAM)  , X(TONGUE)  , _______,
      _______, X(ANGEL), X(SWEAT), X(UPSIDEDN), X(FLUSHED), X(GRIM), _______,                                             _______, X(HEART), X(JOY)     , X(KISS)  , X(LUCK)    , _______    , _______,
-     _______, X(SLEEP), X(SHRUG), X(CONFUSED), X(THINK)  , _______,                                                               _______ , X(MUSCLE)  , _______  , _______    , _______    , _______,
+     _______, X(SLEEP), X(SHRUG), X(CONFUSED), X(THINK)  , _______,                                                               X(FPALM), X(MUSCLE)  , _______  , _______    , _______    , _______,
      _______, _______ , _______ , _______    , _______   ,           _______         ,                        _______          ,            _______    , _______  , X(THUMBSDN), X(THUMBSUP), _______,
                                                                      _______, _______, _______,      _______, _______, _______
 ),
