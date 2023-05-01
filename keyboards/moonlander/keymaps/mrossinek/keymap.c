@@ -40,11 +40,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
  *
  * ,---------------------------------------------------------------.                                          ,---------------------------------------------------------------.
- * | Insert  |    1   |    2   |    3   |    4   |    5   |  TG L2 |                                          |OSMAltGr|    6   |    7   |    8   |    9   |    0   |PrScreen |
+ * | Insert  |    1   |    2   |    3   |    4   |    5   |  TG L2 |                                          | TG L3  |    6   |    7   |    8   |    9   |    0   |PrScreen |
  * |---------+--------+--------+--------+--------+--------+--------|                                          |--------+--------+--------+--------+--------+--------+---------|
  * |`/CtrAlt |    Q   |    W   |    E   |    R   |    T   |  PgUp  |                                          | PgDown |    Y   |    U   |    I   |    O   |    P   |'/CtrAlt |
  * |---------+--------+--------+--------+--------+--------+--------|                                          |--------+--------+--------+--------+--------+--------+---------|
- * |Tab/LAlt |    A   |    S   |    D   |    F   |    G   | OSM T3 |                                          | Scroll |    H   |    J   |    K   |    L   |    ;   | \/LAlt  |
+ * |Tab/LAlt |    A   |    S   |    D   |    F   |    G   | OSL T2 |                                          | OSL T3 |    H   |    J   |    K   |    L   |    ;   | \/LAlt  |
  * |---------+--------+--------+--------+--------+--------+--------'                                          `--------+--------+--------+--------+--------+--------+---------|
  * |Esc/Shift|    Z   |    X   |    C   |    V   |    B   |                                                            |    N   |    M   |    ,   |    .   |    /   |Ent/Shift|
  * |---------+--------+--------+--------+--------+--------'                                                            '--------+--------+--------+--------+--------+---------|
@@ -52,18 +52,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `---------------------------------------------'         |    Delete       |                      |                 |         `---------------------------------------------'
  *                                                         |--------+-----------------.    ,--------+-----------------|
  *                                                         |        | Back-  |        |    |        |        |        |
- *                                                         | Space/ | space/ |  TG L3 |    |        |        |        |
+ *                                                         | Space/ | space/ | Scroll |    |        |        |        |
  *                                                         | LGUI   | RGUI   |        |    |        |        |        |
  *                                                         `--------------------------'    `--------------------------'
  *
  */
 [BASE] = LAYOUT_moonlander(
-     KC_INS        , KC_1   , KC_2   , KC_3   , KC_4  ,  KC_5   , TG(SYMB),                                            OSM(MOD_RALT), KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_PSCR ,
+     KC_INS        , KC_1   , KC_2   , KC_3   , KC_4  ,  KC_5   , TG(SYMB),                                                TG(MDMS) , KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_PSCR ,
      LCA_T(KC_GRV) , KC_Q   , KC_W   , KC_E   , KC_R  ,  KC_T   , KC_PGUP,                                                  KC_PGDN , KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , LCA_T(KC_QUOT),
-     LALT_T(KC_TAB), KC_A   , KC_S   , KC_D   , KC_F  ,  KC_G   , OSM(MDMS),                                           PLOOPY_SCROLL, KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, LALT_T(KC_BSLS),
+     LALT_T(KC_TAB), KC_A   , KC_S   , KC_D   , KC_F  ,  KC_G   , OSL(SYMB),                                              OSL(MDMS) , KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, LALT_T(KC_BSLS),
      LSFT_T(KC_ESC), KC_Z   , KC_X   , KC_C   , KC_V  ,  KC_B   ,                                                                     KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, RSFT_T(KC_ENT),
      LCTL_T(KC_HOME), KC_LBRC, KC_RBRC, KC_LEFT, KC_RGHT,          KC_DEL          ,                                _______       ,             KC_UP  , KC_DOWN, KC_MINS, KC_EQL , RCTL_T(KC_END),
-                                                                  LGUI_T(KC_SPC), RGUI_T(KC_BSPC), TG(MDMS),    _______, _______, _______
+                                                                  LGUI_T(KC_SPC), RGUI_T(KC_BSPC), PLOOPY_SCROLL, _______, _______, _______
 ),
 
 /* Keymap 1: Symbol layer
@@ -91,7 +91,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      _______, KC_EXLM, KC_QUES, KC_LCBR, KC_RCBR, KC_PIPE, _______,                                       _______   , KC_CIRC, KC_7   , KC_8   , KC_9   , KC_ASTR, _______,
      _______, KC_HASH, KC_DLR , KC_LPRN, KC_RPRN, KC_UNDS, _______,                                       _______   , KC_TILD, KC_4   , KC_5   , KC_6   , KC_PLUS, _______,
      _______, KC_AT  , KC_AMPR, KC_LBRC, KC_RBRC, KC_PERC,                                                            KC_DQUO, KC_1   , KC_2  ,  KC_3   , KC_SLSH, _______,
-     _______, S_TRUE , S_FALSE, KC_LABK, KC_RABK,          _______         ,                      _______         ,            KC_DOT , KC_0   , KC_MINS, KC_EQL , _______,
+     _______, S_TRUE , S_FALSE, KC_LABK, KC_RABK,          OSM(MOD_RALT)   ,                      _______         ,            KC_DOT , KC_0   , KC_MINS, KC_EQL , _______,
                                                            _______, _______, _______,    _______, _______, _______
 ),
 
@@ -102,15 +102,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+--------+--------+--------+--------+--------+--------|                                          |--------+--------+--------+--------+--------+--------+--------|
  * |        | Cycle  |        |        | Toggle |        |        |                                          |        |        |        |        |        |        |        |
  * |--------+--------+--------+--------+--------+--------+--------|                                          |--------+--------+--------+--------+--------+--------+--------|
- * |        | B.Down |  B.Up  | H.Down |  H.Up  |        |        |                                          |        |  Left  |  Down  |  Up    | Right  |        |PLAY TGL|
+ * |        | B.Down |  B.Up  | H.Down |  H.Up  |        |        |                                          |        | WWW <- |Mouse 1 |Mouse 2 | WWW -> |        |PLAY TGL|
  * |--------+--------+--------+--------+--------+--------+--------'                                          `--------+--------+--------+--------+--------+--------+--------|
  * |        |        |        |        |        |        |                                                            |        |        | PL PREV| PL NEXT|        |        |
  * |--------+--------+--------+--------+--------+--------'                                                            '--------+--------+--------+--------+--------+--------|
  * |        |        |        |        |        |         ,-----------------.                      ,-----------------.         | VOL UP |VOL DOWN|VOL MUTE|        |        |
- * `--------------------------------------------'         |                 |                      |                 |         `--------------------------------------------'
+ * `--------------------------------------------'         |   Mouse 2       |                      |                 |         `--------------------------------------------'
  *                                                        |--------+-----------------.    ,--------+-----------------|
  *                                                        |        |        |        |    |        |        |        |
- *                                                        |        |        |        |    |        |        |        |
+ *                                                        | Mouse 1| Mouse 3|        |    |        |        |        |
  *                                                        |        |        |        |    |        |        |        |
  *                                                        `--------------------------'    `--------------------------'
  *
@@ -120,8 +120,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      _______, RGB_MOD, _______, _______, RGB_TOG, _______, _______,                                       _______, _______, _______, _______, _______, _______, _______,
      _______, RGB_VAD, RGB_VAI, RGB_HUD, RGB_HUI, _______, _______,                                       _______, KC_WBAK, KC_MS_BTN1, KC_MS_BTN3  , KC_WFWD, _______, KC_MPLY,
      _______, _______, _______, _______, _______, _______,                                                         _______, _______, KC_MPRV, KC_MNXT, _______, _______,
-     _______, _______, _______, _______, _______,          _______          ,                      _______      ,           KC_VOLU, KC_VOLD, KC_MUTE, _______, _______,
-                                                           _______ , _______, _______,    _______, _______, _______
+     _______, _______, _______, _______, _______,          KC_MS_BTN2       ,                      _______      ,           KC_VOLU, KC_VOLD, KC_MUTE, _______, _______,
+                                                           KC_MS_BTN1, KC_MS_BTN3, _______, _______, _______, _______
 ),
 
 };
