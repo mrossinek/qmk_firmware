@@ -25,73 +25,12 @@ enum layers {
     BASE,  // default layer
     SYMB,  // symbols
     MDIA,  // media keys
-    UNIC,  // unicode
 };
 
 enum custom_keycodes {
     RGB_SLD = SAFE_RANGE,
     S_TRUE,
     S_FALSE,
-};
-
-enum unicode_names {
-    ANGEL,
-    CONFUSED,
-    FLUSHED,
-    FPALM,
-    GRIM,
-    HEART,
-    JOY,
-    KISS,
-    LUCK,
-    MUSCLE,
-    NO_EVIL,
-    PARTY,
-    POOP,
-    SCREAM,
-    SHRUG,
-    SLEEP,
-    SMILE,
-    SWEAT,
-    TADA,
-    THINK,
-    THUMBSDN,
-    THUMBSUP,
-    TONGUE,
-    UNAMUSED,
-    UPSIDEDN,
-    WINK,
-    YUMMY,
-};
-
-const uint32_t PROGMEM unicode_map[] = {
-    [ANGEL]    = 0x1F607, // 😇
-    [CONFUSED] = 0x1F615, // 😕
-    [FLUSHED]  = 0x1F633, // 😳
-    [FPALM]    = 0x1F926, // 🤦
-    [GRIM]     = 0x1F62C, // 😬
-    [HEART]    = 0x1F970, // 🥰
-    [JOY]      = 0x1F602, // 😂
-    [KISS]     = 0x1F618, // 😘
-    [LUCK]     = 0x1F340, // 🍀
-    [MUSCLE]   = 0x1F4AA, // 💪
-    [NO_EVIL]  = 0x1F648, // 🙈
-    [PARTY]    = 0x1F973, // 🥳
-    [POOP]     = 0x1F4A9, // 💩
-    [SCREAM]   = 0x1F631, // 😱
-    [SHRUG]    = 0x1F937, // 🤷
-    [SLEEP]    = 0x1F634, // 😴
-    [SMILE]    = 0x1F642, // 🙂
-    [SWEAT]    = 0x1F605, // 😅
-    [TADA]     = 0x1F389, // 🎉
-    [THINK]    = 0x1F914, // 🤔
-    [THUMBSDN] = 0x1F44E, // 👎
-    [THUMBSUP] = 0x1F44D, // 👍
-    [TONGUE]   = 0x1F61C, // 😜
-    [UNAMUSED] = 0x1F612, // 😒
-    [UPSIDEDN] = 0x1F643, // 🙃
-    [WINK]     = 0x1F609, // 😉
-    [YUMMY]    = 0x1F60B, // 😋
 };
 
 // clang-format off
@@ -118,12 +57,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *
  */
 [BASE] = LAYOUT_moonlander(
-     KC_INS        , KC_1   , KC_2   , KC_3   , KC_4  ,  KC_5   , TG(SYMB),                                                 TG(UNIC), KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_PSCR ,
+     KC_INS        , KC_1   , KC_2   , KC_3   , KC_4  ,  KC_5   , TG(SYMB),                                                 TG(SYMB), KC_6   , KC_7   , KC_8   , KC_9   , KC_0   , KC_PSCR ,
      LCA_T(KC_GRV) , KC_Q   , KC_W   , KC_E   , KC_R  ,  KC_T   , KC_PGUP,                                                  KC_PGDN , KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , LCA_T(KC_QUOT),
      LALT_T(KC_TAB), KC_A   , KC_S   , KC_D   , KC_F  ,  KC_G   , KC_HOME,                                                  KC_END  , KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, LALT_T(KC_BSLS),
      KC_LSFT       , KC_Z   , KC_X   , KC_C   , KC_V  ,  KC_B   ,                                                                     KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_RSFT ,
      KC_LCTL      , KC_LBRC, KC_RBRC, KC_LEFT, KC_RGHT,          KC_DEL          ,                                TG(MDIA)      ,             KC_UP  , KC_DOWN, KC_MINS, KC_EQL , KC_RCTL,
-                                                                  LGUI_T(KC_SPC), KC_BSPC, OSL(SYMB),   OSL(UNIC), KC_ESC, RGUI_T(KC_ENT)
+                                                                  LGUI_T(KC_SPC), KC_BSPC, OSL(SYMB),   OSL(SYMB), KC_ESC, RGUI_T(KC_ENT)
 ),
 
 /* Keymap 1: Symbol layer
@@ -182,35 +121,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      _______, _______, _______, _______, _______, _______,                                                         _______, _______, KC_MPRV, KC_MNXT, _______, _______,
      _______, _______, _______, _______, _______,          QK_BOOT          ,                      _______      ,           KC_VOLU, KC_VOLD, KC_MUTE, _______, _______,
                                                            _______ , _______, _______,    _______, _______, _______
-),
-
-/* Keymap 3: Unicode layer
- *
- * ,--------------------------------------------------------------.                                          ,--------------------------------------------------------------.
- * |        |        |        |        |        |        |        |                                          |        |        |        |        |        |        |        |
- * |--------+--------+--------+--------+--------+--------+--------|                                          |--------+--------+--------+--------+--------+--------+--------|
- * |        |   💩   |   😉   |   🙈   |   🥳   |   🎉   |        |                                          |        |   😋   |   😒   |   🙂   |   😱   |   😜   |        |
- * |--------+--------+--------+--------+--------+--------+--------|                                          |--------+--------+--------+--------+--------+--------+--------|
- * |        |   😇   |   😅   |   🙃   |   😳   |   😬   |        |                                          |        |   🥰   |   😂   |   😘   |   🍀   |        |        |
- * |--------+--------+--------+--------+--------+--------+--------'                                          `--------+--------+--------+--------+--------+--------+--------|
- * |        |   😴   |   🤷   |   😕   |   🤔   |        |                                                            |        |   💪   |        |        |        |        |
- * |--------+--------+--------+--------+--------+--------'                                                            '--------+--------+--------+--------+--------+--------|
- * |        |        |        |        |        |         ,-----------------.                      ,-----------------.         |        |        |   👎   |   👍   |        |
- * `--------------------------------------------'         |                 |                      |                 |         `--------------------------------------------'
- *                                                        |--------+-----------------.    ,--------+-----------------|
- *                                                        |        |        |        |    |        |        |        |
- *                                                        |        |        |        |    |        |        |        |
- *                                                        |        |        |        |    |        |        |        |
- *                                                        `--------------------------'    `--------------------------'
- *
- */
-[UNIC] = LAYOUT_moonlander(
-     _______, _______ , _______ , _______    , _______   , _______, _______,                                             _______, _______ , _______    , _______  , _______    , _______    , _______,
-     _______, X(POOP) , X(WINK) , X(NO_EVIL) , X(PARTY)  , X(TADA), _______,                                             _______, X(YUMMY), X(UNAMUSED), X(SMILE) , X(SCREAM)  , X(TONGUE)  , _______,
-     _______, X(ANGEL), X(SWEAT), X(UPSIDEDN), X(FLUSHED), X(GRIM), _______,                                             _______, X(HEART), X(JOY)     , X(KISS)  , X(LUCK)    , _______    , _______,
-     _______, X(SLEEP), X(SHRUG), X(CONFUSED), X(THINK)  , _______,                                                               X(FPALM), X(MUSCLE)  , _______  , _______    , _______    , _______,
-     _______, _______ , _______ , _______    , _______   ,           _______         ,                        _______          ,            _______    , _______  , X(THUMBSDN), X(THUMBSUP), _______,
-                                                                     _______, _______, _______,      _______, _______, _______
 ),
 
 };
