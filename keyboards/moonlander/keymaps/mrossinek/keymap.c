@@ -29,7 +29,7 @@ enum layers {
 };
 
 enum custom_keycodes {
-    RGB_SLD = ML_SAFE_RANGE,
+    RGB_SLD = SAFE_RANGE,
     S_TRUE,
     S_FALSE,
 };
@@ -122,7 +122,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      LCA_T(KC_GRV) , KC_Q   , KC_W   , KC_E   , KC_R  ,  KC_T   , KC_PGUP,                                                  KC_PGDN , KC_Y   , KC_U   , KC_I   , KC_O   , KC_P   , LCA_T(KC_QUOT),
      LALT_T(KC_TAB), KC_A   , KC_S   , KC_D   , KC_F  ,  KC_G   , KC_HOME,                                                  KC_END  , KC_H   , KC_J   , KC_K   , KC_L   , KC_SCLN, LALT_T(KC_BSLS),
      KC_LSFT       , KC_Z   , KC_X   , KC_C   , KC_V  ,  KC_B   ,                                                                     KC_N   , KC_M   , KC_COMM, KC_DOT , KC_SLSH, KC_RSFT ,
-     KC_LCTRL      , KC_LBRC, KC_RBRC, KC_LEFT, KC_RGHT,          KC_DEL          ,                                TG(MDIA)      ,             KC_UP  , KC_DOWN, KC_MINS, KC_EQL , KC_RCTRL,
+     KC_LCTL      , KC_LBRC, KC_RBRC, KC_LEFT, KC_RGHT,          KC_DEL          ,                                TG(MDIA)      ,             KC_UP  , KC_DOWN, KC_MINS, KC_EQL , KC_RCTL,
                                                                   LGUI_T(KC_SPC), KC_BSPC, OSL(SYMB),   OSL(UNIC), KC_ESC, RGUI_T(KC_ENT)
 ),
 
@@ -167,7 +167,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |        |        |        |        |        |        |                                                            |        |        | PL PREV| PL NEXT|        |        |
  * |--------+--------+--------+--------+--------+--------'                                                            '--------+--------+--------+--------+--------+--------|
  * |        |        |        |        |        |         ,-----------------.                      ,-----------------.         | VOL UP |VOL DOWN|VOL MUTE|        |        |
- * `--------------------------------------------'         |   RESET         |                      |                 |         `--------------------------------------------'
+ * `--------------------------------------------'         |   QK_BOOT       |                      |                 |         `--------------------------------------------'
  *                                                        |--------+-----------------.    ,--------+-----------------|
  *                                                        |        |        |        |    |        |        |        |
  *                                                        |        |        |        |    |        |        |        |
@@ -180,7 +180,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      _______, RGB_MOD, _______, _______, RGB_TOG, _______, _______,                                       _______, _______, _______, _______, _______, _______, _______,
      _______, RGB_VAD, RGB_VAI, RGB_HUD, RGB_HUI, _______, _______,                                       _______, KC_LEFT, KC_DOWN, KC_UP  , KC_RGHT, _______, KC_MPLY,
      _______, _______, _______, _______, _______, _______,                                                         _______, _______, KC_MPRV, KC_MNXT, _______, _______,
-     _______, _______, _______, _______, _______,          RESET            ,                      _______      ,           KC_VOLU, KC_VOLD, KC_MUTE, _______, _______,
+     _______, _______, _______, _______, _______,          QK_BOOT          ,                      _______      ,           KC_VOLU, KC_VOLD, KC_MUTE, _______, _______,
                                                            _______ , _______, _______,    _______, _______, _______
 ),
 
